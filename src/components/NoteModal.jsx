@@ -20,10 +20,11 @@ const NoteModal = ({ isOpen, onClose, children }) => {
                     rounded-xl
                     shadow-2xl
                     w-full max-w-4xl lg:max-w-6xl xl:max-w-7xl
-                    h-[calc(100vh-4rem)] overflow-y-auto
+                    h-[calc(100vh-4rem)]
                     p-6 md:p-8
                     transform transition-all duration-300 ease-out
                     scale-100 opacity-100
+                    flex flex-col 
                     "
                 onClick={(e) => e.stopPropagation()}
             >
