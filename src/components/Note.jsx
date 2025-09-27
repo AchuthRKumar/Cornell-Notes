@@ -21,9 +21,18 @@ const Note = ({ initialNote = {}, onSave }) => {
             ...prevContent,
             ...initialNote,
             title: initialNote.title || '', 
+            cues: initialNote.cues || '',
+            mainNotes: initialNote.mainNotes || '',
+            summary: initialNote.summary || '',
             updatedAt: new Date().toISOString(),
         }));
     }, [initialNote]);
+
+    useEffect(() => {
+        if (onSave) {
+            onSave(noteContent);
+        }
+    }, [noteContent, onSave]);
 
     const [currentFont, setCurrentFont] = useState('font-old-standard-tt');
     const [currentSize, setCurrentSize] = useState('text-lg');
@@ -122,7 +131,6 @@ const Note = ({ initialNote = {}, onSave }) => {
             [name]: value,
             updatedAt: new Date().toISOString(),
         }));
-        // Resize the textarea immediately after its content changes
         resizeTextarea(e.target);
     };
 
