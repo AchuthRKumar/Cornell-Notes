@@ -2,7 +2,7 @@ import React from 'react';
 
 const NewNoteButton = ({ onClick }) => {
     return (
-        <div>
+        <div >
             <button
                 onClick={onClick}
                 className="

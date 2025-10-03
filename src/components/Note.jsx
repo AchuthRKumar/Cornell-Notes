@@ -181,7 +181,7 @@ const Note = ({ initialNote = {}, onSave }) => {
                 "
                 />
                 {/* Cues and Main Notes Section (using Grid for layout) */}
-                <div className="flex-grow grid grid-cols-[1fr_2px_3fr] min-h-[40vh] mb-2">
+                <div className="flex-grow grid grid-cols-1 md:grid-cols-[1fr_2px_3fr] min-h-[40vh] mb-2">
                     {/* Cues/Keywords Section */}
                     <textarea
                         name="cues"
@@ -193,14 +193,15 @@ const Note = ({ initialNote = {}, onSave }) => {
                         bg-transparent text-gray-200
                         focus:outline-none
                         resize-none
-                        h-auto overflow-hidden // Crucial for auto-expanding without scrollbars
+                        h-auto overflow-hidden 
                         placeholder-gray-500
                         ${getTextareaClasses()}`}
                         rows={1} 
                     ></textarea>
 
-                    {/* Vertical Divider */}
-                    <div className="bg-zinc-700 h-full"></div>
+                    {/* Horizontal divider for small screens, vertical for md and up */}
+                    <hr className="border-zinc-700 my-4 md:hidden" />
+                    <div className="bg-zinc-700 h-full hidden md:block"></div>
 
                     {/* Main Note-Taking Area */}
                     <textarea

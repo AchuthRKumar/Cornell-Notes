@@ -16,6 +16,7 @@ const ToolbarButton = ({ icon, label, onClick, isActive }) => (
             h-10 w-10 
             p-2 rounded-xl 
             ${isActive ? 'bg-zinc-600 text-white' : 'text-gray-400 hover:bg-zinc-700 hover:text-white'}
+            flex-shrink-0
             `}
         aria-label={label}
         title={label}
@@ -53,7 +54,8 @@ const FormattingToolbar = ({ onFontChange, onSizeChange, onBoldToggle, onItalicT
                     bg-zinc-800 text-gray-200 rounded-md py-2 h-10 
                     focus:outline-none 
                     cursor-pointer
-                    w-1/7
+                    w-full sm:w-auto 
+                    max-w-[160px]
                     ${selectedFont}
                     `}
                 aria-label="Select font"
@@ -73,6 +75,8 @@ const FormattingToolbar = ({ onFontChange, onSizeChange, onBoldToggle, onItalicT
                     bg-zinc-800 text-gray-200 rounded-md py-2 h-10
                     focus:outline-none 
                     cursor-pointer
+                    w-full sm:w-auto 
+                    max-w-[160px]
                     "
                 aria-label="Select text size"
             >

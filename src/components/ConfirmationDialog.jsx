@@ -16,7 +16,7 @@ const ConfirmationDialog = ({ isOpen, onClose, onConfirm, title, message }) => {
                 className="
                     bg-zinc-800 text-gray-100
                     rounded-xl shadow-2xl
-                    p-6 max-w-sm w-full
+                    p-6 max-w-sm w-[90%] mx-4
                     transform transition-all duration-300 ease-out
                     scale-100 opacity-100
                 "

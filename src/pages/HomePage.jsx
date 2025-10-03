@@ -92,12 +92,12 @@ const HomePage = () => {
                 Cornell Notes App
             </h1>
 
-            <div className="flex flex-wrap gap-4 mt-8 pl-4">
+            <div className="flex flex-wrap gap-4 mt-8 pl-4 pr-4">
                 <NewNoteButton onClick={handleNewNoteClick} />
 
                 {notes.length === 0 ? (
                     // Empty State Message
-                    <div className="flex flex-col items-center justify-center border-2 border-dashed border-zinc-700 rounded-lg text-gray-400 w-full max-w-lg">
+                    <div className="flex flex-col items-center justify-center border-2 border-dashed border-zinc-700 rounded-lg text-gray-400 w-full max-w-lg p-8">
                         <p className="text-lg text-center mb-4">
                             You don't have any notes yet!
                         </p>
@@ -111,7 +111,7 @@ const HomePage = () => {
                             key={note.id}
                             className="
                             relative
-                            w-48 h-48 bg-zinc-800 text-zinc-100 rounded-lg shadow-lg
+                            w-full sm:w-48 h-48 bg-zinc-800 text-zinc-100 rounded-lg shadow-lg
                             hover:bg-zinc-700 hover:shadow-xl
                             transition-all duration-200 ease-in-out
                             p-4 cursor-pointer flex flex-col justify-between
